@@ -184,9 +184,10 @@ function App() {
             setLoading(false);
           }
         },
-        (err) => {
+        (error) => {
           setError('Error getting location. Please enable location services.');
           setWeather(null);
+          console.error('Geolocation Error:', error);
         },
         { enableHighAccuracy: true } // Request high accuracy to get speed
       );
