@@ -70,4 +70,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Weather data provided by [WeatherAPI.com](https://www.weatherapi.com/)
 - Maps provided by [OpenStreetMap](https://www.openstreetmap.org/)
-- Icons from [Material-UI Icons](https://mui.com/material-ui/material-icons/) 
+- Icons from [Material-UI Icons](https://mui.com/material-ui/material-icons/) # WheatherAPP
