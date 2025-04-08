@@ -509,33 +509,40 @@ function App() {
                     }}
                   >
                     <Box sx={{ p: 2 }}>
-                      <iframe
-                        title="location-map"
-                        width="100%"
-                        height="400"
-                        frameBorder="0"
-                        style={{ 
-                          border: 0,
-                          borderRadius: '8px',
-                          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+                      {/* Map */}
+                      <Paper 
+                        elevation={3} 
+                        sx={{ 
+                          width: '100%', 
+                          height: '300px', 
+                          overflow: 'hidden',
+                          borderRadius: 3,
+                          mt: 3
                         }}
-                        src={`https://www.openstreetmap.org/export/embed.html?bbox=${weather.location.lon-0.1}%2C${weather.location.lat-0.1}%2C${weather.location.lon+0.1}%2C${weather.location.lat+0.1}&layer=mapnik&marker=${weather.location.lat}%2C${weather.location.lon}`}
-                        allowFullScreen
-                      />
-                      <Box sx={{ mt: 2, textAlign: 'center' }}>
-                        <Button 
-                          variant="text" 
-                          href={`https://www.openstreetmap.org/?mlat=${weather.location.lat}&mlon=${weather.location.lon}&zoom=10`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          sx={{ 
-                            borderRadius: 3,
-                            textTransform: 'none'
-                          }}
-                        >
-                          View Larger Map
-                        </Button>
-                      </Box>
+                      >
+                        <iframe
+                          title="Location Map"
+                          width="100%"
+                          height="100%"
+                          frameBorder="0"
+                          scrolling="no"
+                          marginHeight={0}
+                          marginWidth={0}
+                          src={`https://www.openstreetmap.org/export/embed.html?bbox=${weather.location.lon-0.1}%2C${weather.location.lat-0.1}%2C${weather.location.lon+0.1}%2C${weather.location.lat+0.1}&layer=mapnik&marker=${weather.location.lat}%2C${weather.location.lon}`}
+                          style={{ border: '1px solid #ddd' }}
+                          sandbox="allow-scripts allow-same-origin allow-popups"
+                        />
+                        <Box sx={{ textAlign: 'center', p: 1, backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
+                          <a 
+                            href={`https://www.openstreetmap.org/?mlat=${weather.location.lat}&mlon=${weather.location.lon}&zoom=12`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: '#0078A8', textDecoration: 'none' }}
+                          >
+                            View Larger Map
+                          </a>
+                        </Box>
+                      </Paper>
                     </Box>
                   </Paper>
                 </Grid>
